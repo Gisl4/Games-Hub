@@ -1,0 +1,150 @@
+/** {
+    box-sizing: border-box;*/
+
+.topoFont {
+  font-family: cursive;
+  background: url("https://res.cloudinary.com/dhshflrbz/image/upload/v1713045886/maxresdefault_dcaolp.jpg");
+  color: white;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  text-align: left;
+  padding-top: 7vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.score {
+  color: #fec5e5;
+  background: #fd5da8;
+  padding: 1rem;
+  line-height: 1;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.controls {
+  margin: 5px;
+  text-align: center;
+}
+
+.start-btn {
+  padding: 10px 25px;
+  outline: none;
+  font-style: 24px;
+  background-color: #fd5da8;
+  color: white;
+  border: 0px;
+  box-shadow: 1px 2px 4px #520324;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background: #c93c89;
+  box-shadow: 1px 2px 4px #b61e71;
+}
+
+.levels {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.levels > div {
+  margin: 20px;
+}
+
+/*Pseudoclase la cual selecciona los hermanos para que cumplan cierta condicion*/
+.levels > div:nth-child(1) {
+  color: aqua;
+}
+/*Este selector coincide con cada elemento que sea 
+nth child, del mismo tipo de su padre
+Esta posicionandose el primer hijo de la galeria*/
+.levels > div:nth-child(2) {
+  color: yellow;
+}
+
+.levels > div:nth-child(3) {
+  color: greenyellow;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  /*cada hoyo del juego*/
+  background: url("https://res.cloudinary.com/dhshflrbz/image/upload/v1712564279/juegos/hole_bmol93.png")
+    bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+/*Se agregara el div con JS*/
+.mole {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background: url("https://res.cloudinary.com/dhshflrbz/image/upload/v1713198110/1835817_v6x3rs.png")
+    bottom center no-repeat;
+  background-size: 60%;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+/*Cuando sale de un agujero y se vuelven visible*/
+
+/*Up para hacerlo visible*/
+.hole.up .mole {
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    padding: 20px;
+    font-style: 2rem;
+  }
+
+  .score {
+    margin: 20px;
+  }
+
+  .hole::after {
+    bottom: -22px;
+    margin: 6px;
+  }
+
+  .start-btn {
+    padding: 8px 20px;
+  }
+
+  .levels > div {
+    margin: 10px;
+  }
+
+  .game {
+    width: 90%;
+    height: 300px;
+  }
+}

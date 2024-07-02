@@ -1,0 +1,109 @@
+/*Centrar los elementos horizontal y verticalmente*/
+.align {
+  display: flex;
+  justify-content: center; /*centrar los elementos horizontales*/
+  align-items: center; /*centrar los elementos verticales*/
+}
+
+/*Fondo*/
+.raya {
+  background: url("https://res.cloudinary.com/dhshflrbz/image/upload/v1713045886/maxresdefault_dcaolp.jpg");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  text-align: center;
+  padding-top: 5vh;
+}
+
+.turn-container {
+  width: 170px;
+  height: 80px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+}
+
+.turn-container h3 {
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.turn-container .turn-box {
+  border: 3px solid rgb(199, 13, 206);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.turn-container .turn-box:nth-child(even) {
+  border-right: none;
+}
+
+/**Fondo adicional*/
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85px;
+  height: 49px;
+  background-color: pink;
+  z-index: -1;
+}
+
+/*Cuadricula principal*/
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 250px;
+  width: 250px;
+  margin: 30px auto;
+  border: 2px solid rgb(199, 13, 206);
+  box-shadow: 10px 10px 3px rgb(141, 77, 132);
+}
+
+/*La Caja interactiva*/
+.box {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid rgb(199, 13, 206);
+}
+
+.box:hover {
+  background-color: rgb(216, 173, 181);
+}
+
+/*Boton*/
+#play-again {
+  background-color: #ffc0cb;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+#play-again:hover {
+  padding: 10px 40px;
+  background-color: rgb(107, 14, 79);
+  color: rgb(230, 11, 219);
+}
+
+@media (max-width: 376px) {
+  #raya {
+    padding: 0;
+  }
+  .turn-container {
+    box-sizing: content-box;
+    width: 17.5em;
+
+    background-color: #ffffff62;
+    border-radius: 0px;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+  }
+}
